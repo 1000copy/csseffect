@@ -1,0 +1,20 @@
+<div> Vs <Section>
+
+Round 1
+
+<div>: The HTML element (or HTML Document Division Element) is the generic container for flow content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element (such as <article> or <nav>) is appropriate.
+
+<section>: The HTML Section element (<section>) represents a generic section of a document, i.e., a thematic grouping of content, typically with a heading.
+
+Round 2
+
+<div>: Browser Support 
+
+<section>: Browser Support
+
+The numbers in the table specifies the first browser version that fully supports the element. 
+
+In that vein, a div is relevant only from a pure CSS or DOM perspective, whereas a section is relevant also for semantics and, in a near future, for indexing by search engines.
+
+
+html5 - What is the difference between <section> and <div>? - Stack Overflow - http://stackoverflow.com/questions/6939864/what-is-the-difference-between-section-and-div
