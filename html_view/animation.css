@@ -1,0 +1,237 @@
+/*from http://superlity.com/*/
+#subheaderone {
+    width:100%;
+    min-height:700px;
+    background: url(header.jpg) no-repeat center top;
+    background-attachment: relative;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+}     
+
+#subheaderone h1 {
+    font-weight: 900;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+}
+
+/*--------------------------------------------------------------------------------------------
+EARTH ANIMATION
+-------------------------------------------------------------------------------------------- */
+
+
+  
+#subheaderone .earth{
+   background:url("earth.png") no-repeat;
+   width:250px;
+   height:250px;
+   margin:0 auto;
+   margin-top: 20px; 
+   position: relative;
+   z-index: 10;
+
+   /*animation*/
+   animation-name: earth;
+   animation-duration: 100s;
+   animation-timing-function: ease-in;
+   animation-iteration-count: 1;  
+   animation-direction: normal;
+   animation-delay: 0;
+   animation-play-state: running;
+   animation-fill-mode: forwards;
+  }
+  /*keyframes*/    
+  @keyframes earth{
+    
+  0% {
+    top: -50px;
+    opacity: 0.75;
+    transform: rotate(0deg);
+    }
+  1% {
+    top: 150px;
+    opacity: 1;
+    transform: rotate(45deg);
+    }
+
+  2% {
+      top: 115px;
+      transform: rotate(0deg);
+     }
+  100% {
+    top: 115px;
+    transform: rotate(360deg);
+       }
+                   
+}
+
+.star1{
+ background:url("star.png")no-repeat center center;
+ width:20px;
+ height:20px;
+ border-radius:20px;       
+ position: absolute; 
+
+ animation-name: star1;
+ animation-duration: 100s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite; 
+ animation-direction: normal;
+ animation-delay: 0;
+ animation-play-state: running;
+ animation-fill-mode: forwards;
+}
+
+/*keyframes*/    
+@keyframes star1{ 
+0% {
+  opacity: 0;
+  left:10%;
+      top:30%;
+  }
+  
+2.3% {
+  opacity: 0;
+  transform:scale(1);
+  }
+
+
+2.5% {
+  opacity: 1;
+  transform:scale(2);
+    }
+
+3.5% {
+  opacity: 1;
+  transform: scale(1);
+    }
+   
+50% {
+   left:10%;
+       top:35%;
+     }
+
+100% {
+   left:10%;         
+       top:30%;
+     }
+}                   
+
+
+/*---------------------------------
+STAR 2
+------------------------------------ */    
+.star2{
+ background:url("smallstar.png")no-repeat center center;
+ width:10px;
+ height:10px;
+ border-radius:10px;
+ position: absolute; 
+
+ /*animation*/
+ animation-name: star2;
+ animation-duration: 100s;/*一次跑多久*/
+ animation-timing-function: linear;
+ animation-iteration-count: infinite; /*跑多少次*/
+ animation-direction: normal;
+ animation-delay: 0;
+ animation-play-state: running;
+ animation-fill-mode: forwards;
+ }
+
+/*keyframes*/    
+@keyframes star2{
+  
+  0% {
+  opacity: 0;
+  left:20%;
+      top:30%;
+  }
+  
+2.3% {
+  opacity: 0;
+  transform:scale(1);
+  }
+
+
+2.5% {
+  opacity: 1;
+  transform:scale(2);
+    }
+
+3.5% {
+  opacity: 1;
+  transform: scale(1);
+    }
+   
+50% {
+   left:30%;
+       top:35%;
+     }
+
+100% {
+   left:20%;
+       top:30%;
+     }
+}            
+
+
+/*---------------------------------
+STAR 3
+------------------------------------ */    
+.star3{
+ background:url("star.png")no-repeat center center;
+ width:20px;
+ height:20px;
+ border-radius:20px;
+ position: absolute; 
+
+ animation-name: star3;
+ animation-duration: 100s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite; 
+ animation-direction: normal;
+ animation-delay: 0;
+ animation-play-state: running;
+ animation-fill-mode: forwards;
+ }
+
+/*keyframes*/    
+@keyframes star3{
+  
+  0% {
+  opacity: 0;
+  left:25%;
+      top:25%;
+  }
+  
+1% {
+  opacity: 0;
+  transform:scale(1);
+  }
+
+
+1.5% {
+  opacity: 1;
+  transform:scale(2);
+    }
+
+2% {
+  opacity: 1;
+  transform: scale(1);
+    }
+   
+   50% {
+   left:35%;
+       top:30%;
+     }
+
+100% {
+   left:25%;
+       top:25%;
+     }
+}            
+
+
