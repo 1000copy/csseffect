@@ -1,4 +1,4 @@
-<!-- <META HTTP-EQUIV="refresh" CONTENT="1"> -->
+<!-- Create a Sticky Note Effect in 5 Easy Steps with CSS3 and HTML5 - Tuts+ Code Tutorial - http://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934 -->
 <style type="text/css">
   *{
     margin:0;
@@ -22,36 +22,55 @@
     overflow:hidden;
     padding:3em;
   }
-  ul li a{
-    text-decoration:none;
-    color:#000;
-    background:#ffc;
-    display:block;
-    height:10em;
-    width:10em;
-    padding:1em;
-  }
+
   ul li{
     margin:1em;
     float:left;
   }
-  #a{clear: left}
+  ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+}
+ul li a:hover,ul li a:focus{
+  box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+
+ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+div{
+  float:left;border:1px solid;margin:1em;height:40em;width: 50em;
+}
+
 </style>
+<div  id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" >
 <ul>
   <li style="float:left">
-    <a href="#" >
-      <h2>Title #1</h2>
+    <a href="#" id="note2" draggable="true" ondragstart="drag(event)">
+      <h2>draggable #1</h2>
       <p>Text Content </p>
     </a>
   </li>
   <li >
-    <a href="#" >
-      <h2>Title #2</h2>
-      <p>Text Content #2</p>
-    </a>
-  </li>
-  <li >
-    <a href="#" >
+    <a href="#" style="background:#cfc;">
       <h2>Title #2</h2>
       <p>Text Content #2</p>
     </a>
@@ -62,16 +81,71 @@
       <p>Text Content #2</p>
     </a>
   </li>
-  <li >
-    <a href="#" >
-      <h2>Title #4</h2>
-      <p>Text Content #2</p>
-    </a>
-  </li>
-  <li >
-    <a href="#" >
-      <h2>Title #2</h2>
-      <p>Text Content #2</p>
-    </a>
-  </li>
+
+
 </ul>
+</div>
+<div style="float:left;border:1px solid;margin:1em;height:40em" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+<ul>
+  <li style="float:left">
+    <a href="#" >
+      <h2>Title #1</h2>
+      <p>Text Content </p>
+    </a>
+  </li>
+  <li >
+    <a href="#" id="note1" draggable="true" ondragstart="drag(event)">
+      <h2> Draggable #1</h2>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+
+</ul>
+</div>
+<input type="button" onclick="doclick()" value="test" style="display:none"/>
+<script type="text/javascript">
+  // function doclick(){
+  //   move("note1", document.getElementById("div1"))    
+  // }
+  function move(id,target){
+    console.dir(target)
+    var t =target.getElementsByTagName("UL")[0]
+    var f =  document.createElement("LI");
+    var g = document.getElementById(id)
+    f.appendChild(g);
+    t.appendChild(f)     
+  }
+</script>
+
+
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text")   
+    // console.dir(ev.target)     
+    var element = upTo(ev.target,"DIV")
+    // element = ev.target;
+    move(data,element)    
+}
+function upTo(el, tagName) {
+  tagName = tagName.toLowerCase();
+  if (tagName == el.tagName.toLowerCase()) return el;
+  while (el && el.parentNode) {
+    el = el.parentNode;
+    if (el.tagName && el.tagName.toLowerCase() == tagName) {
+      return el;
+    }
+  }
+  return null;
+}
+</script>
+
